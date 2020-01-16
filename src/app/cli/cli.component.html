@@ -1,0 +1,23 @@
+
+<div >
+    <form>
+    <p class='style'>{{title}}</p>
+    <img [src] = "imageUrl" class="div">
+    <h1 class="p">Input Data Here</h1>
+    <p class="p">Name: <input type="text" #name  ></p>
+    <br>
+    
+    <div class="pq">
+        <button (click)= "SendData(name.value)" [style.background]="isSubmit">Submit</button>
+    <br><br>
+
+    <button class="class" [class.active]="isActive">Class Bind</button><br><br>
+
+    <button class="styles" [style.background]="isActives ? 'blue': 'pink'">Style Bind</button>
+    </div>
+
+</form>  
+</div>
+
+
+

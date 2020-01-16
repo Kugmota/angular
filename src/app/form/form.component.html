@@ -1,0 +1,33 @@
+<div class="card">
+    <p> Parent Component </p> 
+  <p>Fullname:  <input type="text" [(ngModel)]="parentdata"/></p>
+  <p>Enrolled?<input type="checkbox" [(ngModel)]="enrollData"></p>
+  <p>Gender:  
+      <select [(ngModel)]="genderData">
+      <option value="none"></option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+</p>
+  <br>
+  <button (click)=onChange()>Submit</button>
+
+  
+  <p *ngIf ="cdata">Notification: {{cdata}}
+         <h1>List of Declined</h1> 
+         <ul>
+                <li *ngFor = "let name of data">
+                    <p>Name: {{name.name}} || Status: {{name.status}} || Gender: {{name.gender}} </p>
+                   
+                   
+                </li>
+               </ul>
+        
+    <hr/>
+
+    
+   
+ 
+ 
+</div>
+<app-child (bisagunsa)="data=$event" (childEvent)="cdata=$event" [parentData]="pdata" [enrollData]="edata" [genderData] = 'gdata' ></app-child>

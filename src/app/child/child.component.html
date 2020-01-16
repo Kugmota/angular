@@ -1,0 +1,21 @@
+<div class="card">
+    <p> Child Component <br>
+      
+         <br>Name:  {{parentData}} </p>
+         <p>Enrolled: {{enrollData}}</p>
+         <p>Gender: {{genderData}}</p>
+
+         <button  (click)="onClick()">Approve</button>
+         <button (click)="onClickz()">Decline</button>
+
+         <h1>List of Approved</h1>
+            
+
+        <ul>
+         <li *ngFor = "let name of people">
+             <p>Name: {{name.name}} || Enroll:{{name.status}} ||  Gender:{{name.gender}}</p>
+            
+            
+         </li>
+        </ul>
+</div>

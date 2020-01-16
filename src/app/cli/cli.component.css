@@ -1,0 +1,29 @@
+.div{
+    padding-left: 360px;
+}
+.style{
+    color: blue;
+    font-size: 30px;
+    padding-left: 500px;
+    
+}
+.class{
+    color:blue;
+}
+.active{
+    color: yellow;
+}
+.styles{
+    font-size: 20px;
+    
+  
+}
+.p{
+    padding-left: 500px; 
+}
+.pq{
+    padding-left: 570px; 
+}
+form{
+    background: red;
+}

@@ -1,0 +1,7 @@
+<div>
+    <p> Sir </p> 
+  <input type="text" [(ngModel)]="parentdata"/><button (click)=onChange()>Send</button>
+  <p>From Renzy : {{cdata}}<hr/>
+  <app-child (childEvent)="cdata=$event" [parentData]="pdata">
+  </app-child>
+</div>
