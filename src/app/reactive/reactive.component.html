@@ -1,0 +1,45 @@
+<div class="card">
+<h1>Data Driven Form</h1>
+<form [formGroup]="reactiveForm" (ngSubmit)="submitted=true">
+    <label>
+        Firstname:
+        <input type="text" formControlName="firstname">
+    </label>
+    <br><br>
+    <label>
+        Lastname:
+        <input type="text" formControlName="lastname">
+    </label>
+    <br><br>
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+    </label>
+    <br><br>
+    <h3>Address</h3>
+    <label>
+        Street:
+        <input type="text" formControlName="street">
+    </label>
+    <br><br>
+    <label>
+        City:
+        <input type="text" formControlName="city">
+    </label>
+    <br><br>
+    <label>
+        State:
+        <input type="text" formControlName="state">
+    </label>
+    <br><br>
+    <label>
+        ZipCode:
+        <input type="text" formControlName="zipcode">
+    </label>
+    <br><br>
+
+    <button class="btn" type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+
+  <p *ngIf="submitted">Here are the save datas! <br> {{ reactiveForm.value | json}}</p>
+</form>
+</div>

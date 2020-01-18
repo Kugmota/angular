@@ -1,0 +1,52 @@
+  <div class="card">
+  <div *ngIf="submit">
+  <h1>Template Driven</h1>
+
+<form  (ngSubmit)="onSubmit()" #email="ngForm">
+        <h3>Email: <input email="email" [(ngModel)]="emails" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"  #email="ngModel" [ngModelOptions]={standalone:true}/></h3>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+        <div *ngIf="email.errors.required">Email is required!</div>
+        <div *ngIf="email.errors.pattern">Email is invalid</div>
+              
+        </div>
+        
+    
+    
+    </form>
+
+    <form (ngSubmit)="onSubmit()" #sample="ngForm">
+            <h3>Name: <input name="name" [(ngModel)]="fullname" required minlength="5"  #name="ngModel"/></h3>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+            <div *ngIf="name.errors.required">Name is required!</div>
+            <div *ngIf="name.errors.minlength">Too short!!!</div>
+            
+            
+            </div>
+        
+        
+        
+        </form>
+
+<form (ngSubmit)="onSubmit()" #gender="ngForm">
+    <h3>Gender: <select required [(ngModel)]="genderdata"  [ngModelOptions]="{standalone: true}">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="none">Rather not say</option>
+        </select>
+    </h3>
+</form>
+
+    <button class="btn" (click)="onSubmit()" [disabled]=!sample.form.valid>Submit</button>
+</div>
+<hr>
+
+<div *ngIf = "edit">
+    <h1>Data</h1>
+    <h2>Email: {{edata}}</h2>
+    <h2>Name: {{fname}}</h2>
+    <h2>Gender: {{gdata}}</h2>
+    <br>
+    <button (click)="onEdit()">Edit</button>
+</div>
+
+</div>
